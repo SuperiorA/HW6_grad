@@ -1,17 +1,28 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+/*
+В качестве задачи предлагаю вам реализовать код для демонстрации парадокса Монти Холла
+(Парадокс Монти Холла — Википедия) и наглядно убедиться в верности парадокса (запустить игру в цикле на 1000 и вывести итоговый счет).
+Необходимо:
+Создать свой Java Maven или Gradle проект;
+Подключить зависимость lombok.
+Можно подумать о подключении какой-нибудь математической библиотеки для работы со статистикой
+Самостоятельно реализовать прикладную задачу;
+Сохранить результат в HashMap<шаг теста, результат>
+Вывести на экран статистику по победам и поражениям
+        ЗАДАЧА:
+ Представьте, что вы стали участником игры, в которой вам нужно выбрать одну из трёх дверей.
+ За одной из дверей находится автомобиль, за двумя другими дверями — козы.
+ Вы выбираете одну из дверей, например, номер 1, после этого ведущий, который знает, где находится автомобиль,
+ а где — козы, открывает одну из оставшихся дверей, например, номер 3, за которой находится коза.
+ После этого он спрашивает вас — не желаете ли вы изменить свой выбор и выбрать дверь номер 2?
+ Увеличатся ли ваши шансы выиграть автомобиль, если вы примете предложение ведущего и измените свой выбор?
+**/
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Game game = new Game();
+        game.runSimulation(1000);
+        game.printStatistics();
     }
 }

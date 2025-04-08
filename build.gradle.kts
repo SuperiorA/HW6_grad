@@ -12,6 +12,8 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    compileOnly("org.projectlombok:lombok:1.18.38")
+    implementation("org.apache.commons:commons-math3:3.6.1")
 }
 
 tasks.test {
